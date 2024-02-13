@@ -61,7 +61,7 @@ Para inicializar o projeto com uma base de dados do zero e todas as suas depend�
 
 ## 📌 Host
 
-Após os containers serem carregados, basta acessar o endereço no [http://eloca.localhost/](http://eloca.localhost/) navegador
+Após os containers serem carregados, basta acessar o endereço no [http://eloca.localhost/](http://eloca.localhost/) no navegador
 
 ## 📌 Api
 

@@ -15,7 +15,11 @@
                                 Código
                             </label>
                             <input type="text" class="form-control" id="codigo" v-model="cliente.codigo">
+                            <div v-if="formErrors.codigo" class="text-danger">
+                                {{ formErrors.codigo[0] }}
+                            </div>
                         </div>
+
                         <div class="col-md-4 form-group">
                             <label for="empresa" class="form-label">
                                 Empresa
@@ -25,13 +29,21 @@
                                     {{ empresa.sigla }} - {{ empresa.razao_social }}
                                 </option>
                             </select>
+                            <div v-if="formErrors.empresa" class="text-danger">
+                                {{ formErrors.empresa[0] }}
+                            </div>
                         </div>
+
                         <div class="form-group" :class="cliente.recnum ? 'col-md-4' : 'col-md-6'">
                             <label for="razao_social" class="form-label">
                                 Nome/Razão social
                             </label>
                             <input type="text" class="form-control" id="razao_social" v-model="cliente.razao_social">
+                            <div v-if="formErrors.razao_social" class="text-danger">
+                                {{ formErrors.razao_social[0] }}
+                            </div>
                         </div>
+
                         <div class="col-md-2 form-group">
                             <label for="tipo" class="form-label">
                                 tipo
@@ -40,12 +52,19 @@
                                 <option value="PF">Pessoa Física (PF)</option>
                                 <option value="PJ">Pessoa Jurídica (PJ)</option>
                             </select>
+                            <div v-if="formErrors.tipo" class="text-danger">
+                                {{ formErrors.tipo[0] }}
+                            </div>
                         </div>
+
                         <div class="form-group col-md-2">
                             <label for="cpf_cnpj" class="form-label">
                                 CPF/CNPJ
                             </label>
                             <input type="text" class="form-control" id="cpf_cnpj" v-model="cliente.cpf_cnpj">
+                            <div v-if="formErrors.cpf_cnpj" class="text-danger">
+                                {{ formErrors.cpf_cnpj[0] }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +96,8 @@ export default {
     data() {
         return {
             cliente: {},
-            empresas: []
+            empresas: [],
+            formErrors: {}
         };
     },
 
@@ -109,12 +129,19 @@ export default {
                     'Accept': 'application/json',
                 },
                 body: JSON.stringify(this.cliente)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    this.$router.push('/cliente');
-                })
-                .catch(error => console.error('Error:', error));
+            }).then(response => {
+                if (!response.ok) {
+                    throw response;
+                }
+                return response.json();
+            }).then(data => {
+                this.$router.push('/cliente');
+                this.formErrors = {};
+            }).catch(error => {
+                error.json().then(err => {
+                    this.formErrors = err.errors;
+                });
+            });
         }
     }
 }

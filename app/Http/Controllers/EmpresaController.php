@@ -69,4 +69,10 @@ class EmpresaController extends Controller
 
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
+
+    public function count()
+    {
+        $count = Empresa::count();
+        return response()->json(['count' => $count]);
+    }
 }

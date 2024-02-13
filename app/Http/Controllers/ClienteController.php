@@ -71,4 +71,10 @@ class ClienteController extends Controller
 
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
+
+    public function count()
+    {
+        $count = Cliente::count();
+        return response()->json(['count' => $count]);
+    }
 }

@@ -20,5 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('empresa', EmpresaController::class);
+Route::get('empresa/count', [EmpresaController::class, 'count'])->name('empresa.count');
+Route::get('cliente/count', [ClienteController::class, 'count'])->name('cliente.count');
+
 Route::apiResource('cliente', ClienteController::class);
+Route::apiResource('empresa', EmpresaController::class);

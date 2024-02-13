@@ -42,7 +42,6 @@ services:
             - ${MYSQL_INITDB_DIR}:/docker-entrypoint-initdb.d
             - ${MYSQL_DATA_DIR}:/var/lib/mysql
             - ${MYSQL_LOG_DIR}:/var/log/mysql
-            - ./docker/restore:/tmp/restore
         environment:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}

@@ -92,6 +92,18 @@ docker exec -it $WEB_SERVER_CONTAINER php artisan storage:link
 printf "🧹 Gerando chave de aplicação Laravel e limpando caches...\n"
 docker exec -it $WEB_SERVER_CONTAINER php artisan key:generate
 
+# Verificar instalação do Node.js e NPM
+docker exec -it $WEB_SERVER_CONTAINER node -v
+docker exec -it $WEB_SERVER_CONTAINER npm -v
+
+# Instalar dependências do NPM
+printf "📦 Instalando dependências do NPM...\n"
+docker exec -it $WEB_SERVER_CONTAINER npm install
+
+# Compilar assets para produção
+printf "🛠️ Compilando assets para produção...\n"
+docker exec -it $WEB_SERVER_CONTAINER npm run build
+
 printf "🖥️  Containers iniciados e configurados com sucesso!\n"
 end_time=$(date +%s)
 elapsed_time=$(($end_time - $start_time))

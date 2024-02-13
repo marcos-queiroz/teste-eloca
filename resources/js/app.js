@@ -1,10 +1,14 @@
 import './bootstrap';
 
 import { createApp } from 'vue';
-import BaseComponent from './components/BaseComponent.vue';
+import router from './router';
 
-createApp({
-    components: {
-        BaseComponent
-    }
-}).mount('#app');
+import BaseTemplate from './components/template/BaseTemplate.vue';
+
+const app = createApp({});
+
+app.component('base-template', BaseTemplate);
+
+app.use(router);
+
+app.mount('#app');

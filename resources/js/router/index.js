@@ -7,6 +7,7 @@ import EmpresaList from '../components/EmpresaList.vue';
 import EmpresaForm from '../components/EmpresaForm.vue';
 
 import ClienteList from '../components/ClienteList.vue';
+import ClienteForm from '../components/ClienteForm.vue';
 
 // Defina suas rotas
 const routes = [
@@ -34,6 +35,16 @@ const routes = [
         path: '/cliente',
         name: 'Cliente',
         component: ClienteList,
+    },
+    {
+        path: '/cliente/nova',
+        name: 'NovoCliente',
+        component: ClienteForm,
+    },
+    {
+        path: '/cliente/editar/:codigo',
+        name: 'EditarCliente',
+        component: ClienteForm
     },
 ];
 

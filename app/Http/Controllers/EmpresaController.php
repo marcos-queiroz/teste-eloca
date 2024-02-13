@@ -23,7 +23,7 @@ class EmpresaController extends Controller
     {
         $request->validate([
             'codigo' => 'required|numeric|unique:empresa,codigo',
-            'empresa' => 'required|numeric',
+            'empresa' => 'required|numeric|unique:empresa,empresa',
             'sigla' => 'required|string|max:40',
             'razao_social' => 'required|string|max:255',
         ]);

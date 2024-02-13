@@ -17,7 +17,6 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Código</th>
                                 <th>Empresa</th>
                                 <th>Sigla</th>
@@ -27,7 +26,6 @@
                         </thead>
                         <tbody>
                             <tr v-for="empresa in empresas" :key="empresa.recnum">
-                                <td>{{ empresa.recnum }}</td>
                                 <td>{{ empresa.codigo }}</td>
                                 <td>{{ empresa.empresa }}</td>
                                 <td>{{ empresa.sigla }}</td>

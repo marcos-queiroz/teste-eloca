@@ -78,7 +78,7 @@ export default {
     methods: {
         submitForm() {
             const method = this.empresa.recnum ? 'PUT' : 'POST';
-            const url = this.empresa.recnum ? `/api/empresa/${this.empresa.recnum}` : '/api/empresa';
+            const url = this.empresa.recnum ? `/api/empresa/${this.empresa.codigo}` : '/api/empresa';
 
             fetch(url, {
                 method: method,

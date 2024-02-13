@@ -1,6 +1,6 @@
 <template>
     <base-template>
-        <div class="card">
+        <div class="card shadow-sm">
             <form @submit.prevent="submitForm">
                 <div class="card-header">
                     <h2>

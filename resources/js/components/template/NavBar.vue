@@ -1,7 +1,10 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Teste ELOCA</a>
+            <router-link to="/" class="navbar-brand">
+                <img src="https://d1zmtoblzb5ysp.cloudfront.net/243b9233-0a4a-421a-884c-906571e3240a/images/eloca_logo_pequena.webp"
+                    class="img-fluid" alt="Eloca" width="120">
+            </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

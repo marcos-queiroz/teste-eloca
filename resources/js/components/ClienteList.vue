@@ -1,7 +1,7 @@
 <template>
     <base-template>
 
-        <div class="card">
+        <div class="card shadow-sm">
             <div class="card-header">
                 <h1>Clientes</h1>
             </div>

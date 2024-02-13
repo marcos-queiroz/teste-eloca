@@ -5,7 +5,6 @@
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-descrição">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-utilização">Utilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-inicialização-completa">Inicialização completa</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -30,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Para executar esse teste de maneira rápida e sem complicações é necessário ter o Docker instalado e configurado.
 
-## Utilização
+## 📌 Utilização
 
 > Obs.: No Windows de preferencia em utilizar o WSL.
 
@@ -52,7 +51,7 @@ Após clonar o projeto em um diretório, de permissão para o script com o coman
 chmod +x start-container.sh
 ```
 
-## Inicialização completa
+## 📌 Inicialização completa
 
 Para inicializar o projeto com uma base de dados do zero e todas as suas dependências utilize o comando:
 
@@ -60,11 +59,11 @@ Para inicializar o projeto com uma base de dados do zero e todas as suas depend�
 ./start-container.sh
 ```
 
-## Host
+## 📌 Host
 
 Após os containers serem carregados, basta acessar o endereço no [http://eloca.localhost/](http://eloca.localhost/) navegador
 
-## Api
+## 📌 Api
 
 Foi disponibilizada 2 endpoints da API REST para consumir basta utilizar os verbos HTTP nos endereços:
 

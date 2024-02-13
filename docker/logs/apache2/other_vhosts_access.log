@@ -1,0 +1,6 @@
+localhost:80 172.23.0.1 - - [13/Feb/2024:02:24:41 +0000] "GET / HTTP/1.1" 403 491 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+localhost:80 172.23.0.1 - - [13/Feb/2024:02:24:41 +0000] "GET /favicon.ico HTTP/1.1" 404 487 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+asa.localhost:80 172.23.0.1 - - [13/Feb/2024:02:24:54 +0000] "GET / HTTP/1.1" 200 8339 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+asa.localhost:80 172.23.0.1 - - [13/Feb/2024:02:24:55 +0000] "GET /favicon.ico HTTP/1.1" 200 295 "http://eloca.localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+asa.localhost:80 172.27.0.1 - - [13/Feb/2024:02:32:22 +0000] "GET / HTTP/1.1" 200 8339 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+asa.localhost:80 172.27.0.1 - - [13/Feb/2024:02:33:14 +0000] "-" 408 0 "-" "-"

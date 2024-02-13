@@ -1,11 +1,52 @@
 <template>
     <base-template>
-        <h1>Empresas</h1>
-        <ul>
-            <li v-for="empresa in empresas" :key="empresa.id">
-                {{ empresa.razao_social }}
-            </li>
-        </ul>
+
+        <div class="card">
+            <div class="card-header">
+                <h1>Empresas</h1>
+            </div>
+
+            <div class="card-body">
+                <div class="d-grid justify-content-md-end mb-3">
+                    <router-link to="/empresa/nova" class="btn btn-primary">
+                        Novo
+                    </router-link>
+                </div>
+
+                <div class="table table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Código</th>
+                                <th>Empresa</th>
+                                <th>Sigla</th>
+                                <th>Razão social</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="empresa in empresas" :key="empresa.recnum">
+                                <td>{{ empresa.recnum }}</td>
+                                <td>{{ empresa.codigo }}</td>
+                                <td>{{ empresa.empresa }}</td>
+                                <td>{{ empresa.sigla }}</td>
+                                <td>{{ empresa.razao_social }}</td>
+                                <td class="text-center">
+                                    <router-link :to="'/empresa/editar/' + empresa.codigo" class="btn btn-sm btn-warning mx-1">
+                                        Editar
+                                    </router-link>
+                                    <button @click="confirmDelete(empresa.codigo)" class="btn btn-sm btn-danger mx-1">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </base-template>
 </template>
 
@@ -16,12 +57,15 @@ export default {
     components: {
         BaseTemplate
     },
+
     name: 'EmpresaList',
+
     data() {
         return {
             empresas: [],
         };
     },
+
     mounted() {
         fetch('/api/empresa')
             .then(response => response.json())
@@ -29,5 +73,20 @@ export default {
                 this.empresas = data;
             });
     },
+
+    methods: {
+        confirmDelete(codigo) {
+            if (confirm('Tem certeza que deseja excluir esta empresa?')) {
+                fetch(`/api/empresa/${codigo}`, {
+                    method: 'DELETE',
+                })
+                    .then(() => {
+                        this.empresas = this.empresas.filter(empresa => empresa.codigo !== codigo);
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+    }
+
 }
 </script>
